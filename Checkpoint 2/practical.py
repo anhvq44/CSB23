@@ -1,3 +1,4 @@
+# Time/space complexity: O(n+m) where n and m is the length of nums1 and nums2
 def CombineArrays(nums1, nums2):
     res = [0]*(len(nums1) + len(nums2))
     i = 0
