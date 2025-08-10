@@ -53,6 +53,8 @@ def testdrive():
                 print(browser.forward())
             case _:
                 print("Invalid request number. Please try again")
+        print(" ")
         request = input("Request number: ")
+    print("Exit program.")
                 
 testdrive()
