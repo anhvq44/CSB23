@@ -29,6 +29,12 @@ class Browser:
         
 def testdrive():
     browser = Browser()
+    
+    RED = '\033[31m'
+    GREEN = '\033[32m'
+    BLUE = '\033[34m'
+    RESET = '\033[0m'
+    
     function_table = """ Use number 1, 2, 3, 4 to navigate:
     1. Visit page: Input page name
     2. <- Back
@@ -37,13 +43,13 @@ def testdrive():
     """
     request = ""
     print(function_table)
-    request = input("Request number: ")
+    request = input(f"{BLUE}Request number: {RESET}")
     while request != "4":
         match request:
             case "1":
-                page_name = input("Page name: ").strip()
+                page_name = input(f"{BLUE}Page name: {RESET}").strip()
                 if not page_name:
-                    print("Page name can not be empty")
+                    print(f"{RED}Page name can not be empty {RESET}")
                     request = ""
                     continue
                 print(browser.visit_page(page_name))
@@ -52,9 +58,9 @@ def testdrive():
             case "3":
                 print(browser.forward())
             case _:
-                print("Invalid request number. Please try again")
+                print(f"{RED}Invalid request number. Please try again {RESET}")
         print(" ")
-        request = input("Request number: ")
-    print("Exit program.")
+        request = input(f"{BLUE}Request number: {RESET}")
+    print(f"{GREEN}Exit program.{RESET}")
                 
 testdrive()
