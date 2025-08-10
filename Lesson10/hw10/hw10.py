@@ -13,7 +13,7 @@ def process_csv(file_path):
                 continue
             
             name, company, email = row
-            email = email.strip().lower()
+            email = email.strip()
             company = company.strip()
         
             if email not in email_list:
@@ -29,5 +29,7 @@ def process_csv(file_path):
     print("Danh sách công ty và số lượng đại biểu:")
     for company, num_people in sorted_company_list:
         print(f'{company}: {num_people}')
-        
+
+
+
 process_csv("Lesson10/hw10/data.csv")
