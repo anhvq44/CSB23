@@ -36,8 +36,10 @@ def MoveController():
                     request = ""
                     continue
                 print(player.RecordMove(move_name))
+                print(f'Movement history: {player.recorded_move}')
             case "2":
                 print(player.UndoMove())
+                print(f'Movement history: {player.recorded_move}')
             case _:
                 print(f"{RED}Invalid request number. Please try again {RESET}")
         print(" ")
